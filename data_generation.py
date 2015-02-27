@@ -66,10 +66,18 @@ def generate(F, block_size, data_size, file, percentage = 1.0):
 #Boolean function
 F = [[0,1],[1,2],[2,3]];
 
+s = "";
+for i in range(len(F)):
+    if(i != 0):
+        s += "+";
+    for j in range(len(F[i])):
+        #print(F[i][j]);
+        s += "x" + str(F[i][j]);
+        print(s);
 
 
 
-outfile = open("data", "wb");
+outfile = open(s, "wb");
 generate(F,1,10,outfile,1.0);
 
 
